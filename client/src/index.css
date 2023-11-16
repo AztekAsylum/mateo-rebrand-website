@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,4 +66,40 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+#custom-nav-brand {
+  justify-content: center;
 }
+
+#custom-nav-container {
+  justify-content: center;
+}
+
+#nav-link-col {
+  width: 97vw;
+}
+
+/* #custom-nav-hamburger {
+  position: relative;
+  top: -18px;
+} */
+
+@media screen and (min-width: 768px) {
+  #nav-link-col {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  #custom-nav-dropdown {
+    /* border: 2px solid red; */
+    /* justify-self: left; */
+    text-align: left !important;
+    position: absolute !important;
+    /* top: 0px; */
+    right: 78vw;
+  }
+}
+/* @media screen and (max-width: 768px) {
+
+} */

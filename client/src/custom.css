@@ -1,0 +1,40 @@
+#custom-nav-brand {
+  justify-content: center;
+}
+
+#custom-nav-container {
+  justify-content: center;
+}
+
+#nav-link-col {
+  width: 97vw;
+  z-index: 3;
+}
+
+#custom-brand-col {
+  z-index: 5;
+}
+
+/* #custom-nav-hamburger {
+  position: relative;
+  top: -18px;
+} */
+
+@media screen and (min-width: 768px) {
+  #nav-link-col {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  #custom-nav-dropdown {
+    /* border: 2px solid red; */
+    /* justify-self: left; */
+    text-align: left !important;
+    position: absolute !important;
+    /* top: 0px; */
+    left: 30px;
+  }
+}
+/* @media screen and (max-width: 768px) {
+
+} */
