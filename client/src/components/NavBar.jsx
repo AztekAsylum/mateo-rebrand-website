@@ -2,7 +2,7 @@ import { Container, Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const NavBar = () => {
   return (
-    <Navbar expand="md" bg="dark" data-bs-theme="dark">
+    <Navbar id="customNavBar"expand="md" bg="dark" data-bs-theme="dark">
       <Container id="custom-nav-container">
         <Row>
           <Col xs className="text-center" id="custom-brand-col">
@@ -19,9 +19,7 @@ const NavBar = () => {
               <Nav className="ms-auto">
                 <div id="custom-nav-dropdown">
                   <NavDropdown title="Merch" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">
-                      Tote Bag
-                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.1">Tote</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">
                       Hoodie
                     </NavDropdown.Item>
@@ -34,10 +32,10 @@ const NavBar = () => {
                     </NavDropdown.Item>
                   </NavDropdown>
                 </div>
-                <Nav.Link href="/contact">Contact</Nav.Link>
-                <Nav.Link href="/photo">Photo</Nav.Link>
-                <Nav.Link href="/video">Video</Nav.Link>
                 <Nav.Link href="/work">Work</Nav.Link>
+                <Nav.Link href="/video">Video</Nav.Link>
+                <Nav.Link href="/photo">Photo</Nav.Link>
+                <Nav.Link href="/contact">Contact</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Col>

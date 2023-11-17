@@ -1,8 +1,12 @@
+import Wrapper from "../components/VideoWrapper";
+
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <Wrapper>
+      <div>
+        <h1>Home Page</h1>
+      </div>
+    </Wrapper>
   );
 };
 

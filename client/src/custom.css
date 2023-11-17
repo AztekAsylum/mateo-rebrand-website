@@ -6,13 +6,17 @@
   justify-content: center;
 }
 
+#customNavBar {
+  position: relative;
+  z-index: 4;
+}
 #nav-link-col {
   width: 97vw;
-  z-index: 3;
+  z-index: 5;
 }
 
 #custom-brand-col {
-  z-index: 5;
+  z-index: 6;
 }
 
 /* #custom-nav-hamburger {
