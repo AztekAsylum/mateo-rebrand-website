@@ -2,11 +2,11 @@ import { Container, Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const NavBar = () => {
   return (
-    <Navbar id="customNavBar"expand="md" bg="dark" data-bs-theme="dark">
+    <Navbar id="customNavBar" expand="md" bg="dark" data-bs-theme="dark">
       <Container id="custom-nav-container">
         <Row>
           <Col xs className="text-center" id="custom-brand-col">
-            <Navbar.Brand id="custom-nav-brand" href="/">
+            <Navbar.Brand className="mx-auto" id="custom-nav-brand" href="/">
               MATEO RODRIGUEZ
             </Navbar.Brand>
           </Col>

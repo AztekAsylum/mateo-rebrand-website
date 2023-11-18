@@ -1,3 +1,11 @@
+body {
+  background-color: black;
+}
+
+.CustomRounded {
+  border-radius: 25px;
+}
+
 #embedVideo {
   position: fixed;
   z-index: 1;
@@ -12,6 +20,7 @@
   z-index: 2;
   top: 46px;
   left: 0px;
+  width: 100%;
 }
 #outerVideoWrapper {
   height: 100vh;
@@ -27,9 +36,17 @@
   min-height: 100%;
 }
 
+#HomePageContainer {
+  margin-top: 33vh;
+}
+
 #footerDiv {
   position: relative;
   z-index: 3;
-  background-color: red;
+  background-color: rgb(33, 37, 41);
   top: 10px;
+}
+#marquee-col {
+  /* background-color: black; */
+  color: whitesmoke;
 }

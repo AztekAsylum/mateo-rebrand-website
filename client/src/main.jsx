@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import "./ResetLinks.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./custom.css";

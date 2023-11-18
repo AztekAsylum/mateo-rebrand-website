@@ -1,5 +1,6 @@
 #custom-nav-brand {
   justify-content: center;
+  text-align: center;
 }
 
 #custom-nav-container {
@@ -36,7 +37,8 @@
     text-align: left !important;
     position: absolute !important;
     /* top: 0px; */
-    left: 30px;
+    left: 3rem;
+    /* padding-left: var(--bs-nav-link-padding-x); */
   }
 }
 /* @media screen and (max-width: 768px) {
