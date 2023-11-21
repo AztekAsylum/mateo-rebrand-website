@@ -14,6 +14,7 @@ import Video from "./pages/VideoPage";
 import Work from "./pages/WorkPage.jsx";
 import Photo from "./pages/PhotoPage.jsx";
 import NoMatch from "./pages/NoMatch";
+import Checkout from "./pages/CheckoutPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/photo",
         element: <Photo />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
   },
