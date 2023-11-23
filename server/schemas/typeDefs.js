@@ -8,7 +8,7 @@ const typeDefs = `
     _id: ID
     name: String
     description: String
-    image: String
+    images: [String]
     quantity: Int
     price: Float
     category: Category
@@ -41,14 +41,14 @@ const typeDefs = `
     _id: ID
     purchaseQuantity: Int
     name: String
-    image: String
+    images: [String]
     price: Float
     quantity: Int
   }
 
   type Query {
     categories: [Category]
-    products(category: ID, name: String): [Product]
+    products(category: String, name: String): [Product]
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order

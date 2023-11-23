@@ -10,8 +10,10 @@ const resolvers = {
     products: async (parent, { category, name }) => {
       const params = {};
 
-      if (category) {
-        params.category = category;
+      if (category && category !== "all") {
+        const categoryId = await Category.find({ name: category });
+        console.log(categoryId[0]._id);
+        params.category = categoryId[0]._id;
       }
 
       if (name) {

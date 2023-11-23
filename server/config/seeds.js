@@ -8,42 +8,42 @@ db.once("open", async () => {
   await cleanDB("User", "users");
 
   const categories = await Category.insertMany([
-    { name: "Food" },
-    { name: "Household Supplies" },
-    { name: "Electronics" },
-    { name: "Books" },
-    { name: "Toys" },
+    { name: "tote" },
+    { name: "hoodie" },
+    { name: "t-Shirt" },
   ]);
 
   console.log("categories seeded");
 
   const products = await Product.insertMany([
     {
-      name: "Tin of Cookies",
+      name: "Suffer Tote",
       description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      images: ["cookie-tin.jpg"],
+        "14 by 15 inch heavy canvas tote with full side and bottom gussets.<br/>*PROMOTIONAL PRODUCT NOT MEANT TO BE WASHED",
+      images: ["/Assets/Images/Suffer_Tote.jpg"],
       category: categories[0]._id,
-      price: 2.99,
-      quantity: 500,
+      price: 19.99,
+      quantity: 10,
+      price_id: "1",
     },
     {
-      name: "Canned Coffee",
-      description:
-        "Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.",
-      images: ["canned-coffee.jpg"],
-      category: categories[0]._id,
-      price: 1.99,
-      quantity: 500,
+      name: "Lost Again",
+      description: "Creme 6.5oz Garment Dye Crew Neck T-Shirt",
+      images: ["/Assets/Images/LB_BlockLetters.jpg"],
+      category: categories[2]._id,
+      price: 34.99,
+      quantity: 11,
+      price_id: "2",
     },
     {
-      name: "Toilet Paper",
+      name: "Dream Warriors Hoodie",
       category: categories[1]._id,
       description:
-        "Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.",
-      images: ["toilet-paper.jpg"],
-      price: 7.99,
-      quantity: 20,
+        "10 oz. 70% cotton 30% polyester hoodie with puff print artwork.",
+      images: ["/Assets/Images/LBS_HoodieFront.jpg"],
+      price: 55.99,
+      quantity: 12,
+      price_id: "3",
     },
   ]);
 
