@@ -1,9 +1,17 @@
 body {
-  background-color: black;
+  background-color: white;
 }
 
 .CustomRounded {
   border-radius: 25px;
+}
+
+.FooterCard {
+  background-color: white;
+}
+
+.BorderCard {
+  background-color: white;
 }
 
 #embedVideo {

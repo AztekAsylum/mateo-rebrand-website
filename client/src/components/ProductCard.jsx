@@ -5,17 +5,17 @@ const ProductCard = (props) => {
     props.product;
   return (
     <>
-      <Card>
+      <Card className="card border-0">
         <Card.Img variant="top" src={images[0]} />
-        <Card.Body>
+        <Card.Body className="text-black ">
           <Card.Title className="text-center">{name}</Card.Title>
           <Card.Text className="text-center">{description}</Card.Text>
         </Card.Body>
-        <Card.Footer className="text-center">
+        <Card.Footer className="text-center FooterCard border-0">
           <Button
             variant="dark"
             style={{
-              width: "50%",
+              width: "35%",
             }}
           >
             ADD TO CART

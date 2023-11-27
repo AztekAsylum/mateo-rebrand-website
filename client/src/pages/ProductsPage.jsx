@@ -37,8 +37,8 @@ const Products = () => {
   }, [loading, data]);
 
   return (
-    <Container key="merch">
-      <h3 className="text-center">PRODUCT PAGE</h3>
+    <Container className="text-center" key="merch">
+      <h3>PRODUCTS</h3>
       {loading ? (
         <h2>loading...</h2>
       ) : (
@@ -54,7 +54,7 @@ const Products = () => {
                   }
                   return sameCategory ? (
                     // <h3 key={product._id}>{product.name}</h3>
-                    <Col xs={4}>
+                    <Col xs={4} className="mx-auto pb-4">
                       <ProductCard product={product} />
                     </Col>
                   ) : null;
