@@ -19,8 +19,10 @@ const NavBar = () => {
               <Nav className="ms-auto">
                 <div id="custom-nav-dropdown">
                   <NavDropdown title="Merch" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Tote</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
+                    <NavDropdown.Item href="/products/tote">
+                      Tote
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/products/hoodie">
                       Hoodie
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.3">

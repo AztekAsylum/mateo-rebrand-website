@@ -38,7 +38,7 @@ const Products = () => {
 
   return (
     <Container key="merch">
-      <h1>Product Page</h1>
+      <h3 className="text-center">PRODUCT PAGE</h3>
       {loading ? (
         <h2>loading...</h2>
       ) : (

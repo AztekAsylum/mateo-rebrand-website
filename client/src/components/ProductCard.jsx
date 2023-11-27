@@ -8,11 +8,18 @@ const ProductCard = (props) => {
       <Card>
         <Card.Img variant="top" src={images[0]} />
         <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>{description}</Card.Text>
+          <Card.Title className="text-center">{name}</Card.Title>
+          <Card.Text className="text-center">{description}</Card.Text>
         </Card.Body>
-        <Card.Footer>
-          <Button variant="primary">Add To Cart</Button>
+        <Card.Footer className="text-center">
+          <Button
+            variant="dark"
+            style={{
+              width: "50%",
+            }}
+          >
+            ADD TO CART
+          </Button>
         </Card.Footer>
       </Card>
     </>

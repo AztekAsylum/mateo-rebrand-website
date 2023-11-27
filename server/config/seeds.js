@@ -10,7 +10,7 @@ db.once("open", async () => {
   const categories = await Category.insertMany([
     { name: "tote" },
     { name: "hoodie" },
-    { name: "t-Shirt" },
+    { name: "t-shirt" },
   ]);
 
   console.log("categories seeded");
