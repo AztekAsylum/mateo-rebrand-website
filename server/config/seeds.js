@@ -10,7 +10,7 @@ db.once("open", async () => {
   const categories = await Category.insertMany([
     { name: "tote" },
     { name: "hoodie" },
-    { name: "t-shirt" },
+    { name: "tshirt" },
   ]);
 
   console.log("categories seeded");
@@ -29,7 +29,7 @@ db.once("open", async () => {
     {
       name: "Lost Again",
       description: "Creme 6.5oz Garment Dye Crew Neck T-Shirt",
-      images: ["/Assets/Images/LB_BlockLetters.jpg"],
+      images: ["/Assets/Images/LB_BlockLetters.jpg", "/Assets/Images/LB_BlockLetters_B.jpg"],
       category: categories[2]._id,
       price: 34.99,
       quantity: 11,
@@ -40,7 +40,7 @@ db.once("open", async () => {
       category: categories[1]._id,
       description:
         "10 oz. 70% cotton 30% polyester hoodie with puff print artwork.",
-      images: ["/Assets/Images/LBS_HoodieFront.jpg"],
+      images: ["/Assets/Images/LBS_HoodieFront.jpg", "/Assets/Images/LBS_HoodieBack.jpg"],
       price: 55.99,
       quantity: 12,
       price_id: "3",

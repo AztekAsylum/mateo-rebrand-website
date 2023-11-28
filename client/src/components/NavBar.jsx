@@ -25,11 +25,11 @@ const NavBar = () => {
                     <NavDropdown.Item href="/products/hoodie">
                       Hoodie
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">
+                    <NavDropdown.Item href="/products/tshirt">
                       T-Shirt
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">
+                    <NavDropdown.Item href="/products/all">
                       All Merch
                     </NavDropdown.Item>
                   </NavDropdown>

@@ -15,6 +15,26 @@ const Products = () => {
 
   const [categoryArray, setCategoryArray] = useState([]);
 
+  const formatCategory = (e) => {
+    console.log(e);
+    let output = "";
+    switch (e) {
+      case "tshirt":
+        output = "T-SHIRT";
+        break;
+      case "hoodie":
+        output = "HOODIE";
+        break;
+      case "tote":
+        output = "TOTE";
+        break;
+      default:
+        output = e;
+        break;
+    }
+    return output;
+  };
+
   const getCategories = async (arr) => {
     const outputArray = [];
     await arr.map((e) => {
@@ -22,6 +42,11 @@ const Products = () => {
         outputArray.push(e.category.name);
       }
     });
+    // outputArray.map((e) => {
+    //   if (e.category.name === "tshirt") {
+    //     e.category.name = "t-shirt";
+    //   }
+    // });
     await setCategoryArray(outputArray);
     console.log(categoryArray);
   };
@@ -38,14 +63,16 @@ const Products = () => {
 
   return (
     <Container className="text-center" key="merch">
-      <h3>PRODUCTS</h3>
+      <h2>PRODUCTS</h2>
       {loading ? (
-        <h2>loading...</h2>
+        <h1>loading...</h1>
       ) : (
         categoryArray.map((category, i) => {
           return (
             <>
-              <h2 key={`category${i}`}>{category}</h2>
+              <Row className="border-top border-5 border-dark-subtle pt-2">
+                <h3 key={`category${i}`}>{formatCategory(category)}</h3>
+              </Row>
               <Row>
                 {data.products.map((product) => {
                   let sameCategory = true;
@@ -54,7 +81,7 @@ const Products = () => {
                   }
                   return sameCategory ? (
                     // <h3 key={product._id}>{product.name}</h3>
-                    <Col xs={4} className="mx-auto pb-4">
+                    <Col xs={12} md={10} lg={6} xl={4} className="mx-auto pb-4">
                       <ProductCard product={product} />
                     </Col>
                   ) : null;
