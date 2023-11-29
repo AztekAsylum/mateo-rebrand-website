@@ -63,14 +63,14 @@ const Products = () => {
 
   return (
     <Container className="text-center" key="merch">
-      <h2>PRODUCTS</h2>
+      <h2></h2>
       {loading ? (
         <h1>loading...</h1>
       ) : (
         categoryArray.map((category, i) => {
           return (
             <>
-              <Row className="border-top border-5 border-dark-subtle pt-2">
+              <Row className="border-top border-1 border-light-subtle pt-3">
                 <h3 key={`category${i}`}>{formatCategory(category)}</h3>
               </Row>
               <Row>
