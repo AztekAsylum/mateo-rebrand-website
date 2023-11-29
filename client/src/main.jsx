@@ -12,7 +12,7 @@ import Contact from "./pages/ContactPage";
 import Products from "./pages/ProductsPage";
 import Video from "./pages/VideoPage";
 import Work from "./pages/WorkPage.jsx";
-import Photo from "./pages/PhotoPage.jsx";
+import Photos from "./pages/PhotoPage.tsx";
 import NoMatch from "./pages/NoMatch";
 import Checkout from "./pages/CheckoutPage.jsx";
 
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/photo",
-        element: <Photo />,
+        element: <Photos />,
       },
       {
         path: "/checkout",
