@@ -5,7 +5,7 @@ const Work = () => {
     <Container>
       <Row>
         <Col xs={12} md={10} className="mx-auto">
-          <h1 className="text-center pt-3 pb-2">WORK</h1>
+          <h1 className="text-center pt-3 pb-2"></h1>
           <Carousel
             data-bs-theme="dark"
             indicators={false}

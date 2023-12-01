@@ -9,6 +9,10 @@
   border-bottom: 1;
   border-color: rgb(72, 80, 86);
 }
+.button-block {
+  min-width: 100%;
+  width: 100%;
+}
 
 #custom-nav-brand {
   justify-content: center;

@@ -8,11 +8,9 @@ const AddtoCartModal = ({
   selectedSize,
   setSelectedSize,
 }) => {
-  // const [showModal, setShowModal] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
   const handleClose = () => setShowModal(false);
-  // const handleShow = () => setShowModal(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +30,7 @@ const AddtoCartModal = ({
         data-bs-theme="dark"
       >
         <Modal.Header className="modalBackColor" closeButton>
-          <Modal.Title className="text-white">Merch Modal</Modal.Title>
+          <Modal.Title className="text-white">SHOPPING BAG</Modal.Title>
         </Modal.Header>
         <Modal.Body className="modalBackColor">
           <Form onSubmit={handleSubmit}>
@@ -66,7 +64,7 @@ const AddtoCartModal = ({
             </Form.Group>
             <div className="float-end pt-3">
               <Button variant="secondary" type="submit">
-                Add To Cart
+                Proceed To Checkout
               </Button>
             </div>
           </Form>

@@ -79,7 +79,6 @@ const Products = () => {
                     sameCategory = false;
                   }
                   return sameCategory ? (
-                    // <h3 key={product._id}>{product.name}</h3>
                     <Col xs={12} md={10} lg={6} xl={4} className="mx-auto pb-4">
                       <ProductCard
                         product={product}

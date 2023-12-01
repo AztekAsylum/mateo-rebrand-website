@@ -10,7 +10,7 @@ const Video = () => {
       }}
     >
       <Row className="text-center pt-3">
-        <h2>VIDEO</h2>
+        <h2></h2>
       </Row>
       <Row className="flex-fill">
         <Col

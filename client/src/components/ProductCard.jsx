@@ -69,7 +69,7 @@ const ProductCard = (props) => {
                 variant="dark"
                 onClick={handleAddtoCart}
               >
-                ADD TO CART
+                Add To Bag
               </Button>
             </Col>
             {sizes.length > 1 ? (
@@ -79,7 +79,7 @@ const ProductCard = (props) => {
                     as={ButtonGroup}
                     title={selectedSizeProduct}
                     className="dropDownColor"
-                    variant="secondary"
+                    variant="dark"
                     menuVariant="dark"
                   >
                     {sizes.map((e) => {
