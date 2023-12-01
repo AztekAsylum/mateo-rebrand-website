@@ -4,19 +4,23 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import { Container, Row, Col } from "react-bootstrap";
+import AddtoCartModal from "../components/AddtoCartModal";
 
 const Products = () => {
   const { category } = useParams();
-  console.log(category);
 
   const { loading, data } = useQuery(QUERY_PRODUCTS, {
     variables: { category: category },
   });
 
   const [categoryArray, setCategoryArray] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedSize, setSelectedSize] = useState("Select Size");
+  const [productModal, setProductModal] = useState({});
+
+  const handleShow = () => setShowModal(true);
 
   const formatCategory = (e) => {
-    console.log(e);
     let output = "";
     switch (e) {
       case "tshirt":
@@ -42,11 +46,7 @@ const Products = () => {
         outputArray.push(e.category.name);
       }
     });
-    // outputArray.map((e) => {
-    //   if (e.category.name === "tshirt") {
-    //     e.category.name = "t-shirt";
-    //   }
-    // });
+
     await setCategoryArray(outputArray);
     console.log(categoryArray);
   };
@@ -55,11 +55,10 @@ const Products = () => {
     if (data) {
       console.log(data);
       getCategories(data.products);
-      // setCategoryArray(getCategories(data.products));
-      // console.log(categoryArray);
-      // console.log(products);
     }
   }, [loading, data]);
+
+  console.log(selectedSize, productModal);
 
   return (
     <Container className="text-center" key="merch">
@@ -82,7 +81,12 @@ const Products = () => {
                   return sameCategory ? (
                     // <h3 key={product._id}>{product.name}</h3>
                     <Col xs={12} md={10} lg={6} xl={4} className="mx-auto pb-4">
-                      <ProductCard product={product} />
+                      <ProductCard
+                        product={product}
+                        setSelectedSize={setSelectedSize}
+                        setShowModal={setShowModal}
+                        setProductModal={setProductModal}
+                      />
                     </Col>
                   ) : null;
                 })}
@@ -91,6 +95,13 @@ const Products = () => {
           );
         })
       )}
+      <AddtoCartModal
+        setShowModal={setShowModal}
+        showModal={showModal}
+        product={productModal}
+        selectedSize={selectedSize}
+        setSelectedSize={setSelectedSize}
+      />
     </Container>
   );
 };

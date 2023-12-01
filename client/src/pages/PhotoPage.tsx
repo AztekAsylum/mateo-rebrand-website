@@ -5,6 +5,12 @@ import * as React from "react";
 const Photos = () => {
   const images = [
     {
+      src: "https://images.squarespace-cdn.com/content/v1/53597948e4b0b7727660b369/1602303120982-L3VNAA8Q4CAIPV3G9TKY/R1-06507-0037.JPG",
+      width: 375,
+      height: 556,
+      alt: "",
+    },
+    {
       src: "https://images.squarespace-cdn.com/content/v1/53597948e4b0b7727660b369/1602302944447-EBP5PBQ6NZMC5QF6QZJS/R1-00183-0002.JPG",
       width: 823,
       height: 556,
@@ -16,13 +22,7 @@ const Photos = () => {
       height: 556,
     },
     {
-      src: "https://images.squarespace-cdn.com/content/v1/53597948e4b0b7727660b369/1602303070916-YPAGFEG0MC464GD7XCRB/R1-05136-0009.JPG",
-      width: 823,
-      height: 556,
-      alt: "",
-    },
-    {
-      src: "https://images.squarespace-cdn.com/content/v1/53597948e4b0b7727660b369/1602303120982-L3VNAA8Q4CAIPV3G9TKY/R1-06507-0037.JPG",
+      src: "https://images.squarespace-cdn.com/content/v1/53597948e4b0b7727660b369/1602303864120-2ENTS37HNQKK366BFONC/1011046_1011046-R2-011-4.jpg",
       width: 375,
       height: 556,
       alt: "",
@@ -34,21 +34,21 @@ const Photos = () => {
       alt: "",
     },
     {
+      src: "https://images.squarespace-cdn.com/content/v1/53597948e4b0b7727660b369/1602303070916-YPAGFEG0MC464GD7XCRB/R1-05136-0009.JPG",
+      width: 823,
+      height: 556,
+      alt: "",
+    },
+    {
       src: "https://images.squarespace-cdn.com/content/v1/53597948e4b0b7727660b369/7de02255-0ae0-4e3f-93e8-9e22570d1606/Screen+Shot+2023-02-04+at+5.44.50+PM.jpg",
       width: 768,
       height: 556,
       alt: "",
     },
-    {
-      src: "https://images.squarespace-cdn.com/content/v1/53597948e4b0b7727660b369/1602303864120-2ENTS37HNQKK366BFONC/1011046_1011046-R2-011-4.jpg",
-      width: 375,
-      height: 556,
-      alt: "",
-    },
   ];
 
-  const padding = 9;
-  const spacing = 20;
+  const padding = 0;
+  const spacing = 18;
 
   const renderPhoto = React.useCallback(
     ({ imageProps: { alt, style, ...rest } }: RenderPhotoProps) => (

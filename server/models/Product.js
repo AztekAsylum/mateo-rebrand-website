@@ -2,6 +2,22 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
+const sizeSchema = new Schema({
+  size: {
+    type: String,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    min: 0,
+    default: 0,
+  },
+  price_id: {
+    type: String,
+    required: true,
+  },
+});
+
 const productSchema = new Schema({
   name: {
     type: String,
@@ -21,15 +37,9 @@ const productSchema = new Schema({
     required: true,
     min: 0.99,
   },
-  price_id: {
-    type: String,
-    required: true,
-  },
-  quantity: {
-    type: Number,
-    min: 0,
-    default: 0,
-  },
+
+  sizes: [sizeSchema],
+
   category: {
     type: Schema.Types.ObjectId,
     ref: "Category",

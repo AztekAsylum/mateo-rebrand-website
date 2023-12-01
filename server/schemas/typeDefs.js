@@ -4,14 +4,20 @@ const typeDefs = `
     name: String
   }
 
+  type Size {
+    size: String!
+    quantity: Int
+    price_id: String!
+  }    
+
   type Product {
     _id: ID
-    name: String
+    name: String!
     description: String
     images: [String]
-    quantity: Int
-    price: Float
-    category: Category
+    sizes: [Size]
+    price: Float!
+    category: Category!
   }
 
   type Order {
