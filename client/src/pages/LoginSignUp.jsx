@@ -1,4 +1,4 @@
-import { Button, Form, Tab, Tabs } from "react-bootstrap";
+import { Button, Form, Tab, Tabs, Row } from "react-bootstrap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
@@ -52,11 +52,11 @@ const LoginSignUp = () => {
 
   return (
     <>
-      <h1>Sign Up Page</h1>
+      <h2 className="pt-4 text-center">LOGIN</h2>
       <Form className="mx-auto border-bottom p-4">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" placeholder="" />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
@@ -64,12 +64,13 @@ const LoginSignUp = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control type="password" placeholder="" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="dark" type="submit">
           Submit
         </Button>
       </Form>
+      <h2 className="pt-4 text-center">SIGN UP</h2>
       <Form
         onSubmit={handleAddFormSubmit}
         className="mx-auto border-bottom p-4"
@@ -78,7 +79,7 @@ const LoginSignUp = () => {
           <Form.Label>First Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="First Name"
+            placeholder=""
             name="firstName"
             onChange={handleChange}
           />
@@ -87,7 +88,7 @@ const LoginSignUp = () => {
           <Form.Label>Last Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Last Name"
+            placeholder=""
             name="lastName"
             onChange={handleChange}
           />
@@ -96,7 +97,7 @@ const LoginSignUp = () => {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
-            placeholder="Enter email"
+            placeholder=""
             name="email"
             onChange={handleChange}
           />
@@ -105,18 +106,16 @@ const LoginSignUp = () => {
           </Form.Text>
         </Form.Group>
 
-        <Form.Group 
-        className="mb-3" 
-        controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Password"
+            placeholder=""
             name="password"
             onChange={handleChange}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="dark" type="submit">
           Submit
         </Button>
       </Form>
