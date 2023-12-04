@@ -36,6 +36,27 @@
   z-index: 6;
 }
 
+/* submit button contact form */
+#submitButton {
+  width: 125px;
+}
+/* contatiner styling for contact form */
+#formContainer {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+}
+/* width of contact form */
+#formWidth {
+  width: 90%;
+}
+/* grey text for contact form */
+#formContainer h1 {
+  color: rgb(139, 139, 139);
+}
+
 /* #custom-nav-hamburger {
   position: relative;
   top: -18px;

@@ -42,7 +42,7 @@ export default function Contact() {
     // service_id, templte_id and public key will get from Emailjs website when you create account and add template service and email service
     emailjs
       .sendForm(
-        "service_8q8rwfd",
+        "service_28thcbe",
         "template_d5s6vw7",
         form.current,
         "6HPhF5iRicWDyOEDk"
@@ -63,79 +63,69 @@ export default function Contact() {
   };
 
   return (
-    <div className="container mt-5">
-      <Form onSubmit={sendEmail} ref={form} id="formContainer">
-        <h2 className="text-center mb-4">Contact Me</h2>
-        <div className="row g-3">
-          <div className="col-md-6">
-            <label htmlFor="firstName" className="form-label">
-              Name <span className="text-danger">*</span>
-            </label>
-            <InputGroup className="mb-3">
-              {/* <InputGroup.Text className="label" id="inputGroup-sizing-default">
+    <Form onSubmit={sendEmail} ref={form} id="formContainer">
+      <h2 className="pt-4">CONTACT ME</h2>
+      <div
+        id="formWidth"
+        className="d-flex justify-content-center flex-column mt-4"
+      >
+        <label htmlFor="firstName">
+          Name <span className="text-danger">*</span>
+        </label>
+        <InputGroup className="mb-3">
+          {/* <InputGroup.Text className="label" id="inputGroup-sizing-default">
             Name
           </InputGroup.Text> */}
-              <Form.Control
-                id="name_input"
-                name="from_name"
-                onBlur={onBlurName}
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-              />
-            </InputGroup>
-            <p id="notif-name" className="text-danger align-self-start d-none">
-              NAME IS REQUIRED
-            </p>
-
-            <label htmlFor="firstName" className="form-label">
-              Email <span className="text-danger">*</span>
-            </label>
-            <InputGroup className="mb-3">
-              {/* <InputGroup.Text className="label" id="inputGroup-sizing-default">
+          <Form.Control
+            id="name_input"
+            name="from_name"
+            onBlur={onBlurName}
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
+          />
+        </InputGroup>
+        <p id="notif-name" className="text-danger align-self-start d-none">
+          NAME IS REQUIRED
+        </p>
+        <label htmlFor="firstName">
+          Email <span className="text-danger">*</span>
+        </label>
+        <InputGroup className="mb-3">
+          {/* <InputGroup.Text className="label" id="inputGroup-sizing-default">
             Email
           </InputGroup.Text> */}
-              <Form.Control
-                id="email_input"
-                name="reply_to"
-                onBlur={onBlurEmail}
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-              />
-            </InputGroup>
-            <p id="notif-email" className="text-danger align-self-start d-none">
-              EMAIL IS INVALID
-            </p>
-            <label htmlFor="firstName" className="form-label">
-              Message <span className="text-danger">*</span>
-            </label>
-            <InputGroup className="mb-3">
-              {/* <InputGroup.Text className="label">Message</InputGroup.Text> */}
-              <Form.Control
-                id="message_input"
-                name="message"
-                as="textarea"
-                aria-label="With textarea"
-                onBlur={onBlurMessage}
-              />
-            </InputGroup>
-            <p
-              id="notif-message"
-              className="text-danger align-self-start d-none"
-            >
-              MESSAGE IS REQUIRED
-            </p>
+          <Form.Control
+            id="email_input"
+            name="reply_to"
+            onBlur={onBlurEmail}
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
+          />
+        </InputGroup>
+        <p id="notif-email" className="text-danger align-self-start d-none">
+          EMAIL IS INVALID
+        </p>
+        <label htmlFor="firstName">
+          Message <span className="text-danger">*</span>
+        </label>
+        <InputGroup className="mb-3">
+          {/* <InputGroup.Text className="label">Message</InputGroup.Text> */}
+          <Form.Control
+            id="message_input"
+            name="message"
+            as="textarea"
+            aria-label="With textarea"
+            onBlur={onBlurMessage}
+          />
+        </InputGroup>
+        <p id="notif-message" className="text-danger align-self-start d-none">
+          MESSAGE IS REQUIRED
+        </p>
 
-            <Button
-              className="mb-4"
-              id="submitButton"
-              variant="dark"
-              type="submit"
-            >
-              Submit
-            </Button>
-          </div>
-        </div>
-      </Form>
-    </div>
+        <Button className="mb-4" id="submitButton" variant="dark" type="submit">
+          Submit
+        </Button>
+      </div>
+    </Form>
   );
 }
