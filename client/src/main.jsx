@@ -15,6 +15,7 @@ import Work from "./pages/WorkPage.jsx";
 import Photos from "./pages/PhotoPage.tsx";
 import NoMatch from "./pages/NoMatch";
 import Checkout from "./pages/CheckoutPage.jsx";
+import LoginSignUp from "./pages/LoginSignUp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/authorization",
+        element: <LoginSignUp />,
       },
     ],
   },

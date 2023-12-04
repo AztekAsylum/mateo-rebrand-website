@@ -1,101 +1,141 @@
-// const Contact = () => {
-//   return <h1>Contact</h1>;
-// };
+import { InputGroup, Form, Button } from "react-bootstrap";
+import emailjs from "@emailjs/browser";
+import React, { useRef } from "react";
 
-// export default Contact;
+export default function Contact() {
+  const form = useRef();
 
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+  function onBlurName(event) {
+    var currentValue = event.target.value;
+    if (currentValue == "") {
+      document.getElementById("notif-name").classList.remove("d-none");
+    } else {
+      document.getElementById("notif-name").classList.add("d-none");
+    }
+  }
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: "",
-  });
+  function onBlurEmail(event) {
+    var currentValue = event.target.value;
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+    var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-  const handleSubmit = (e) => {
+    var isValid = regex.test(currentValue);
+
+    if (!isValid) {
+      document.getElementById("notif-email").classList.remove("d-none");
+    } else {
+      document.getElementById("notif-email").classList.add("d-none");
+    }
+  }
+
+  function onBlurMessage(event) {
+    var currentValue = event.target.value;
+    if (currentValue == "") {
+      document.getElementById("notif-message").classList.remove("d-none");
+    } else {
+      document.getElementById("notif-message").classList.add("d-none");
+    }
+  }
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-
-    // For demonstration purposes, log the form data
-    console.log(formData);
+    // service_id, templte_id and public key will get from Emailjs website when you create account and add template service and email service
+    emailjs
+      .sendForm(
+        "service_8q8rwfd",
+        "template_d5s6vw7",
+        form.current,
+        "6HPhF5iRicWDyOEDk"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      )
+      .then(() => {
+        document.getElementById("name_input").value = "";
+        document.getElementById("email_input").value = "";
+        document.getElementById("message_input").value = "";
+      });
   };
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">Contact Me</h2>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={sendEmail} ref={form} id="formContainer">
+        <h2 className="text-center mb-4">Contact Me</h2>
         <div className="row g-3">
           <div className="col-md-6">
             <label htmlFor="firstName" className="form-label">
-              First Name <span className="text-danger">*</span>
+              Name <span className="text-danger">*</span>
             </label>
-            <input
-              type="text"
-              className="form-control"
-              id="firstName"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="col-md-6">
-            <label htmlFor="lastName" className="form-label">
-              Last Name
+            <InputGroup className="mb-3">
+              {/* <InputGroup.Text className="label" id="inputGroup-sizing-default">
+            Name
+          </InputGroup.Text> */}
+              <Form.Control
+                id="name_input"
+                name="from_name"
+                onBlur={onBlurName}
+                aria-label="Default"
+                aria-describedby="inputGroup-sizing-default"
+              />
+            </InputGroup>
+            <p id="notif-name" className="text-danger align-self-start d-none">
+              NAME IS REQUIRED
+            </p>
+
+            <label htmlFor="firstName" className="form-label">
+              Email <span className="text-danger">*</span>
             </label>
-            <input
-              type="text"
-              className="form-control"
-              id="lastName"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-            />
+            <InputGroup className="mb-3">
+              {/* <InputGroup.Text className="label" id="inputGroup-sizing-default">
+            Email
+          </InputGroup.Text> */}
+              <Form.Control
+                id="email_input"
+                name="reply_to"
+                onBlur={onBlurEmail}
+                aria-label="Default"
+                aria-describedby="inputGroup-sizing-default"
+              />
+            </InputGroup>
+            <p id="notif-email" className="text-danger align-self-start d-none">
+              EMAIL IS INVALID
+            </p>
+            <label htmlFor="firstName" className="form-label">
+              Message <span className="text-danger">*</span>
+            </label>
+            <InputGroup className="mb-3">
+              {/* <InputGroup.Text className="label">Message</InputGroup.Text> */}
+              <Form.Control
+                id="message_input"
+                name="message"
+                as="textarea"
+                aria-label="With textarea"
+                onBlur={onBlurMessage}
+              />
+            </InputGroup>
+            <p
+              id="notif-message"
+              className="text-danger align-self-start d-none"
+            >
+              MESSAGE IS REQUIRED
+            </p>
+
+            <Button
+              className="mb-4"
+              id="submitButton"
+              variant="dark"
+              type="submit"
+            >
+              Submit
+            </Button>
           </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email <span className="text-danger">*</span>
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="message" className="form-label">
-            Message
-          </label>
-          <textarea
-            className="form-control"
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows="5"
-          ></textarea>
-        </div>
-        <div className="d-grid">
-          <button type="submit" className="btn btn-dark btn-lg button-block mx-auto">
-            Submit
-          </button>
-        </div>
-      </form>
+      </Form>
     </div>
   );
-};
-
-export default ContactForm;
+}

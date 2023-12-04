@@ -1,6 +1,18 @@
 import { Container, Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER } from "../../utils/queries";
+import { useEffect } from "react";
 
 const NavBar = () => {
+  const { data, loading } = useQuery(QUERY_USER);
+  console.log(loading);
+  if (!loading) {
+    console.log(data);
+  }
+  useEffect(() => {
+    console.log(data);
+  }, [loading, data]);
+
   return (
     <Navbar id="customNavBar" expand="md" bg="dark" data-bs-theme="dark">
       <Container id="custom-nav-container">
@@ -38,6 +50,7 @@ const NavBar = () => {
                 <Nav.Link href="/video">Video</Nav.Link>
                 <Nav.Link href="/photo">Photo</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
+                <Nav.Link href="/authorization">Login</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Col>
