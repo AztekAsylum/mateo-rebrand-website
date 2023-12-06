@@ -13,6 +13,12 @@
   min-width: 100%;
   width: 100%;
 }
+.nav-tabs > .nav-item > .nav-link {
+  color: rgb(72, 80, 86);
+}
+.nav-tabs > .nav-item > .nav-link.active {
+  color: black;
+}
 
 #custom-nav-brand {
   justify-content: center;
@@ -38,7 +44,7 @@
 
 /* submit button contact form */
 #submitButton {
-  width: 125px;
+  width: 85px;
 }
 /* contatiner styling for contact form */
 #formContainer {
@@ -56,11 +62,6 @@
 #formContainer h1 {
   color: rgb(139, 139, 139);
 }
-
-/* #custom-nav-hamburger {
-  position: relative;
-  top: -18px;
-} */
 
 @media screen and (min-width: 768px) {
   #nav-link-col {

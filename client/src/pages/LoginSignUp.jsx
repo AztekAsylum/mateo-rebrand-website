@@ -1,4 +1,4 @@
-import { Button, Form, Tab, Tabs, Row } from "react-bootstrap";
+import { Button, Container, Form, Tab, Tabs, Row, Col } from "react-bootstrap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
@@ -34,11 +34,9 @@ const LoginSignUp = () => {
       variables: {
         email: formState.email,
         password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
       },
     });
-    const token = mutationResponse.data.addUser.token;
+    const token = mutationResponse.data.login.token;
     Auth.login(token);
   };
 
@@ -52,73 +50,98 @@ const LoginSignUp = () => {
 
   return (
     <>
-      <h2 className="pt-4 text-center">LOGIN</h2>
-      <Form className="mx-auto border-bottom p-4">
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+      <Container>
+        <Row>
+          <Col xs={12} md={10} className="mx-auto">
+            <Tabs defaultActiveKey="login">
+              <Tab eventKey="login" title="Login">
+                <h2 className="pt-4 text-center">LOGIN</h2>
+                <Form
+                  className="mx-auto border-bottom p-4"
+                  onSubmit={handleLoginFormSubmit}
+                >
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder=""
+                      name="email"
+                      onChange={handleChange}
+                    />
+                    <Form.Text className="text-muted">
+                      We'll never share your email with anyone else.
+                    </Form.Text>
+                  </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="" />
-        </Form.Group>
-        <Button variant="dark" type="submit">
-          Submit
-        </Button>
-      </Form>
-      <h2 className="pt-4 text-center">SIGN UP</h2>
-      <Form
-        onSubmit={handleAddFormSubmit}
-        className="mx-auto border-bottom p-4"
-      >
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder=""
-            name="firstName"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder=""
-            name="lastName"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder=""
-            name="email"
-            onChange={handleChange}
-          />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder=""
+                      name="password"
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                  <Button variant="dark" type="submit">
+                    Submit
+                  </Button>
+                </Form>
+              </Tab>
+              <Tab eventKey="signUp" title="Sign Up">
+                <h2 className="pt-4 text-center">SIGN UP</h2>
+                <Form
+                  onSubmit={handleAddFormSubmit}
+                  className="mx-auto border-bottom p-4"
+                >
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder=""
+                      name="firstName"
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder=""
+                      name="lastName"
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder=""
+                      name="email"
+                      onChange={handleChange}
+                    />
+                    <Form.Text className="text-muted">
+                      We'll never share your email with anyone else.
+                    </Form.Text>
+                  </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder=""
-            name="password"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Button variant="dark" type="submit">
-          Submit
-        </Button>
-      </Form>
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder=""
+                      name="password"
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                  <Button variant="dark" type="submit">
+                    Submit
+                  </Button>
+                </Form>
+              </Tab>
+            </Tabs>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };

@@ -1,17 +1,10 @@
 import { Container, Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { useQuery } from "@apollo/client";
-import { QUERY_USER } from "../../utils/queries";
-import { useEffect } from "react";
+import Auth from "../../utils/auth";
 
 const NavBar = () => {
-  const { data, loading } = useQuery(QUERY_USER);
-  console.log(loading);
-  if (!loading) {
-    console.log(data);
-  }
-  useEffect(() => {
-    console.log(data);
-  }, [loading, data]);
+  const logOutHandler = () => {
+    Auth.logout();
+  };
 
   return (
     <Navbar id="customNavBar" expand="md" bg="dark" data-bs-theme="dark">
@@ -50,7 +43,14 @@ const NavBar = () => {
                 <Nav.Link href="/video">Video</Nav.Link>
                 <Nav.Link href="/photo">Photo</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
-                <Nav.Link href="/authorization">Login</Nav.Link>
+                {Auth.loggedIn() ? (
+                  <Nav.Link href="/" onClick={logOutHandler}>
+                    Logout
+                  </Nav.Link>
+                ) : (
+                  <Nav.Link href="/authorization">Login/Sign Up</Nav.Link>
+                )}
+                <Nav.Link href="/cart">Cart</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Col>

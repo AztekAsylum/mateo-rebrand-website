@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const AddtoCartModal = ({
   showModal,
@@ -10,6 +11,8 @@ const AddtoCartModal = ({
 }) => {
   const [quantity, setQuantity] = useState(1);
 
+  const navigate = useNavigate();
+
   const handleClose = () => setShowModal(false);
 
   const handleSubmit = (e) => {
@@ -18,7 +21,25 @@ const AddtoCartModal = ({
     console.log(
       `Size: ${selectedSize}, Quantity: ${quantity}, Product: ${product._id}`
     );
+    const localCart = JSON.parse(localStorage.getItem("cartArr"));
+    const cart = localCart?.length ? localCart : [];
+
+    if (
+      cart.some((e) => e.product._id === product._id && e.size === selectedSize)
+    ) {
+      console.log("containsIt");
+      const index = cart.findIndex(
+        (e) => e.product._id === product._id && e.size === selectedSize
+      );
+      cart[index].quantity += quantity;
+    } else {
+      cart.push({ size: selectedSize, quantity: quantity, product: product });
+    }
+    localStorage.setItem("cartArr", JSON.stringify(cart));
+
     handleClose();
+
+    navigate("/cart");
   };
 
   return (
@@ -64,7 +85,7 @@ const AddtoCartModal = ({
             </Form.Group>
             <div className="float-end pt-3">
               <Button variant="secondary" type="submit">
-                Proceed To Checkout
+                Add to bag
               </Button>
             </div>
           </Form>
