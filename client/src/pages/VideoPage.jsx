@@ -22,7 +22,7 @@ const Video = () => {
         >
           <video
             className="w-100 mx-auto"
-            src="https://mateorodriguezarte.s3.us-east-2.amazonaws.com/MHShowDown.mp4"
+            src="https://mateorodriguezarte.s3.us-east-2.amazonaws.com/ProvokerEdit444.mp4"
             controls
           ></video>
         </Col>
@@ -35,7 +35,7 @@ const Video = () => {
         >
           <video
             className="w-100"
-            src="https://mateorodriguezarte.s3.us-east-2.amazonaws.com/MHShowDown.mp4"
+            src="https://mateorodriguezarte.s3.us-east-2.amazonaws.com/Mile+High+Showdown+Lowrider+Show.mp4"
             controls
           ></video>
         </Col>
@@ -48,7 +48,7 @@ const Video = () => {
         >
           <video
             className="w-100"
-            src="https://mateorodriguezarte.s3.us-east-2.amazonaws.com/MHShowDown.mp4"
+            src="https://mateorodriguezarte.s3.us-east-2.amazonaws.com/Slash+Hoodie.mp4"
             controls
           ></video>
         </Col>
