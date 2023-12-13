@@ -5,7 +5,7 @@ const CartItem = ({ size, quantity, product }) => {
       <h5>size:{size}</h5>
       <h5>quantity:{quantity}</h5>
       <h5>product:{product.name}</h5>
-      <img src={product.images[0]} />
+      <img className="CartImg" src={product.images[0]} />
     </>
   );
 };
