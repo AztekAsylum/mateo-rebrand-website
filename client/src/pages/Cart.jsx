@@ -6,7 +6,7 @@ const Cart = () => {
   console.log(cart);
   return (
     <>
-      <h1>Cart</h1>
+      <h1 className="text-center">Cart</h1>
       {cart.map((product) => (
         <CartItem size= {product.size} quantity = {product.quantity} product = {product.product}/>
       ))}

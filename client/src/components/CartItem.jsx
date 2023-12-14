@@ -1,11 +1,17 @@
+import { Container, Row } from "react-bootstrap";
+
 const CartItem = ({ size, quantity, product }) => {
   return (
     <>
-      <h3>Cart Item</h3>
-      <h5>size:{size}</h5>
-      <h5>quantity:{quantity}</h5>
-      <h5>product:{product.name}</h5>
-      <img className="CartImg" src={product.images[0]} />
+      <Container className="detailContainer">
+        <img className="CartImg" src={product.images[0]} />
+        <Row className="ps-3 pt-2">
+          <h6>Cart Item</h6>
+          <h6>size:{size}</h6>
+          <h6>quantity:{quantity}</h6>
+          <h6>product:{product.name}</h6>
+        </Row>
+      </Container>
     </>
   );
 };
