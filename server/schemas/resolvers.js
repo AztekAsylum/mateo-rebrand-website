@@ -1,6 +1,6 @@
 const { User, Product, Category, Order } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
-const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+const stripe = require("stripe")(process.env.STRIPE_API);
 
 const resolvers = {
   Query: {
@@ -54,33 +54,21 @@ const resolvers = {
       throw AuthenticationError;
     },
     checkout: async (parent, args, context) => {
+      console.log("chekout mutation");
       const url = new URL(context.headers.referer).origin;
-      await Order.create({ products: args.products.map(({ _id }) => _id) });
-      // eslint-disable-next-line camelcase
-      const line_items = [];
 
-      // eslint-disable-next-line no-restricted-syntax
-      for (const product of args.products) {
-        line_items.push({
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: product.name,
-              description: product.description,
-              images: [`${url}/images/${product.image}`],
-            },
-            unit_amount: product.price * 100,
-          },
-          quantity: product.purchaseQuantity,
-        });
-      }
+      const line_items = [];
+      args.products.map((product) => {
+        line_items.push(product);
+      });
+      console.log(url);
+      console.log(line_items);
 
       const session = await stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
-        line_items,
+        line_items: line_items,
         mode: "payment",
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${url}/`,
+        success_url: `${url}`,
+        cancel_url: `${url}`,
       });
 
       return { session: session.id };

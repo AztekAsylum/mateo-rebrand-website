@@ -14,6 +14,7 @@ import { v4 as uuidv4 } from "uuid";
 const ProductCard = (props) => {
   const { _id, name, description, price, sizes, images, category } =
     props.product;
+  console.log(sizes[0].price_id);
 
   const { setShowModal, setSelectedSize, setProductModal } = props;
 

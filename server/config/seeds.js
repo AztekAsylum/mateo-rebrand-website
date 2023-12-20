@@ -23,7 +23,14 @@ db.once("open", async () => {
       images: ["/Assets/Images/Suffer_Tote.jpg"],
       category: categories[0]._id,
       price: 20.0,
-      sizes: [{ size: "normal", quantity: 8, price_id: "1" }],
+      // price_id: "price_1OEgYQLGtIOU4Mlebn8nByzQ",
+      sizes: [
+        {
+          size: "normal",
+          quantity: 8,
+          price_id: "price_1OEgYQLGtIOU4Mlebn8nByzQ",
+        },
+      ],
     },
     {
       name: "Lost Again",
@@ -34,12 +41,17 @@ db.once("open", async () => {
       ],
       category: categories[2]._id,
       price: 30.0,
+      // price_id: "price_1OEyB7LGtIOU4MleSDvye1UO",
       sizes: [
-        { size: "S", quantity: 2, price_id: "2" },
-        { size: "M", quantity: 1, price_id: "2" },
-        { size: "L", quantity: 1, price_id: "2" },
-        { size: "XL", quantity: 2, price_id: "2" },
-        { size: "XXL", quantity: 8, price_id: "2" },
+        { size: "S", quantity: 2, price_id: "price_1OEyB7LGtIOU4MleSDvye1UO" },
+        { size: "M", quantity: 1, price_id: "price_1OEyB7LGtIOU4MleSDvye1UO" },
+        { size: "L", quantity: 1, price_id: "price_1OEyB7LGtIOU4MleSDvye1UO" },
+        { size: "XL", quantity: 2, price_id: "price_1OEyB7LGtIOU4MleSDvye1UO" },
+        {
+          size: "XXL",
+          quantity: 8,
+          price_id: "price_1OEyB7LGtIOU4MleSDvye1UO",
+        },
       ],
     },
     {
@@ -52,12 +64,17 @@ db.once("open", async () => {
         "/Assets/Images/LBS_HoodieBack.jpg",
       ],
       price: 50.0,
+      // price_id: "price_1OEyDdLGtIOU4MleaBDIpJga",
       sizes: [
-        { size: "S", quantity: 0, price_id: "3" },
-        { size: "M", quantity: 7, price_id: "3" },
-        { size: "L", quantity: 0, price_id: "3" },
-        { size: "XL", quantity: 2, price_id: "3" },
-        { size: "XXL", quantity: 1, price_id: "3" },
+        { size: "S", quantity: 0, price_id: "price_1OEyDdLGtIOU4MleaBDIpJga" },
+        { size: "M", quantity: 7, price_id: "price_1OEyDdLGtIOU4MleaBDIpJga" },
+        { size: "L", quantity: 0, price_id: "price_1OEyDdLGtIOU4MleaBDIpJga" },
+        { size: "XL", quantity: 2, price_id: "price_1OEyDdLGtIOU4MleaBDIpJga" },
+        {
+          size: "XXL",
+          quantity: 1,
+          price_id: "price_1OEyDdLGtIOU4MleaBDIpJga",
+        },
       ],
     },
   ]);

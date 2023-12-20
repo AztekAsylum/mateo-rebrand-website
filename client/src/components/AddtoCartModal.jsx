@@ -19,8 +19,9 @@ const AddtoCartModal = ({
     e.preventDefault();
     // Perform submission logic here
     console.log(
-      `Size: ${selectedSize}, Quantity: ${quantity}, Product: ${product._id}`
+      `Size: ${selectedSize}, Quantity: ${quantity}, Product: ${product._id}, ${product.sizes[0].price_id}`
     );
+
     const localCart = JSON.parse(localStorage.getItem("cartArr"));
     const cart = localCart?.length ? localCart : [];
 
