@@ -17,6 +17,8 @@ import NoMatch from "./pages/NoMatch";
 import Checkout from "./pages/CheckoutPage.jsx";
 import LoginSignUp from "./pages/LoginSignUp.jsx";
 import Cart from "./pages/Cart.jsx";
+import Success from "./pages/SuccessPage.jsx";
+import Cancel from "./pages/CancelPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/postcheckout/success",
+        element: <Success />,
+      },
+      {
+        path: "/postcheckout/unsuccessful",
+        element: <Cancel />,
       },
     ],
   },

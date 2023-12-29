@@ -67,8 +67,8 @@ const resolvers = {
       const session = await stripe.checkout.sessions.create({
         line_items: line_items,
         mode: "payment",
-        success_url: `${url}`,
-        cancel_url: `${url}`,
+        success_url: `${url}/postcheckout/success/?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${url}/postcheckout/unsuccessful`,
       });
 
       return { session: session.id };
